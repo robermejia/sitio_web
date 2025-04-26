@@ -70,6 +70,19 @@
     }
 }
 @media(max-width: 767px){
+    .logo{
+        width: 50px;
+        height: auto;
+    }
+    .header .logo a{
+        width: 50px;
+        height: auto;
+    }
+    #logo-imagen{
+        width: 50px;
+        height: auto;
+        margin: 0 auto;
+    }
     .contact-section .w-50,
     .contact-section .contact-item,
     .portfolio-popup .description,
@@ -169,6 +182,19 @@
     }
 }
 @media(max-width: 574px){
+    .logo{
+        width: 50px;
+        height: auto;
+    }
+    .header .logo a{
+        width: 50px;
+        height: auto;
+    }
+    #logo-imagen{
+        width: 50px;
+        height: auto;
+        margin: 0 auto;
+    }
     .effect-4 {
         left: 10%;
         top: 20%;

@@ -87,6 +87,7 @@ function updateIcon() {
 // }
 
 //Esperamos a que la pagina este completamente cargada
+/*
 window.addEventListener('load',() => {
   var logotipo = document.getElementById('logo-imagen');
   var image_storage = window.localStorage; //Obtenemos el sessionStorage
@@ -99,14 +100,53 @@ window.addEventListener('load',() => {
   boton.addEventListener('click', () => {
       //Validamos el tema, si esta en dark al hacer click se hara light y viceversa
       if (image_storage.getItem('theme') == 'light'){
-          logotipo.src = 'img/logos/logo-dark.png';
-          image_storage.setItem('theme_url','img/logos/logo-dark.png');
+          logotipo.src = 'img/logos/logo_dark.png';
+          image_storage.setItem('theme_url','img/logos/logo_dark.png');
           image_storage.setItem('theme','light');
       }else{
-          logotipo.src = 'img/logos/logo-light.png';
-          image_storage.setItem('theme_url','img/logos/logo-light.png');
+          logotipo.src = 'img/logos/logo_light.png';
+          image_storage.setItem('theme_url','img/logos/logo_light.png');
           image_storage.setItem('theme','dark');
       }
   });
 });
+*/
+window.addEventListener('load', () => {
+  const logoImg = document.getElementById('logo-imagen'); // Obtenemos la imagen del logo
+  const imageStorage = window.localStorage; // Obtenemos el almacenamiento local
 
+  //Establecemos un tema por defecto si no hay uno guardado.
+  let currentTheme = imageStorage.getItem('theme') || 'light'; 
+
+  function setLogo() {
+    const isDarkMode = currentTheme === 'dark'; // Comprobamos si el tema actual es oscuro
+    const isMobile = window.innerWidth < 768; // Comprobamos si la pantalla es móvil (ajusta el punto de ruptura según sea necesario)
+
+    let src; // Variable para almacenar la ruta de la imagen
+    if (isMobile) {
+      // Si es móvil, usamos los logos móviles
+      src = isDarkMode ? 'img/logos/logo_light_mobile.png' : 'img/logos/logo_dark_mobile.png';
+    } else {
+      // Si no es móvil, usamos los logos normales
+      src = isDarkMode ? 'img/logos/logo_light.png' : 'img/logos/logo_dark.png';
+    }
+    logoImg.src = src; // Cambiamos la ruta de la imagen del logo
+  }
+
+  // Se establece el logo inicial al cargar la página
+  setLogo();
+
+  //Escuchador de eventos para el cambio de tema
+  const themeButton = document.getElementById('boton'); //Asumiendo que tienes un botón con el id 'boton'
+  if (themeButton) {
+      themeButton.addEventListener('click', () => {
+          currentTheme = currentTheme === 'dark' ? 'light' : 'dark'; //Cambiamos el tema
+          imageStorage.setItem('theme', currentTheme); //Guardamos el tema en el almacenamiento local
+          setLogo(); //Actualizamos el logo
+      });
+  }
+
+  // Escuchador de eventos para el cambio de tamaño de la ventana
+  window.addEventListener('resize', setLogo); //Actualizamos el logo si cambia el tamaño de la ventana
+
+});
