@@ -125,7 +125,7 @@ window.addEventListener('load', () => {
     let src; // Variable para almacenar la ruta de la imagen
     if (isMobile) {
       // Si es móvil, usamos los logos móviles
-      src = isDarkMode ? 'img/logos/logo_light_mobile.png' : 'img/logos/logo_dark_mobile.png';
+      src = isDarkMode ? 'img/logos/isologo_mobile_light.png' : 'img/logos/isologo_mobile_dark.png';
     } else {
       // Si no es móvil, usamos los logos normales
       src = isDarkMode ? 'img/logos/logo_light.png' : 'img/logos/logo_dark.png';
