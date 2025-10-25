@@ -872,6 +872,54 @@ NAVEGACIÓN MENÚ
   width: 35px;
   margin-left: 10px;
 }
+
+/* ================ 
+ESTILOS PARA CERTIFICACIONES
+================ */
+.certification-image {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.certificate-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: var(--outer-shadow);
+  transition: all 0.3s ease;
+  object-fit: contain;
+}
+
+.certificate-img:hover {
+  transform: scale(1.2);
+  box-shadow: var(--new-shadow);
+  z-index: 10;
+  position: relative;
+}
+
+/* ================ 
+MEDIA QUERIES PARA CERTIFICADOS
+================ */
+/* Desktop - 50% de ampliación */
+@media (min-width: 1024px) {
+  .certificate-img:hover {
+    transform: scale(1.5);
+  }
+}
+
+/* Tablet - 20% de ampliación */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .certificate-img:hover {
+    transform: scale(1.2);
+  }
+}
+
+/* Móvil - 5% de ampliación */
+@media (max-width: 767px) {
+  .certificate-img:hover {
+    transform: scale(1.05);
+  }
+}
 .about-section .timeline .timeline-item-inner:before {
   content: "";
   position: absolute;
