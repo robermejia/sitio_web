@@ -925,7 +925,7 @@ MEDIA QUERIES PARA CERTIFICADOS
 BOTÓN CTA CON BORDE DEGRADADO
 ================ */
 .cta-gradient {
-  background: linear-gradient(45deg, #000000 0%, #1e3a8a 50%, #3b82f6 100%);
+  background: linear-gradient(45deg, #000000 0%, var(--skin-color) 50%, var(--skin-color) 100%);
   border: 2px solid transparent;
   background-clip: padding-box;
   position: relative;
@@ -956,6 +956,36 @@ MODO DARK PARA BOTÓN CTA
 ================ */
 body.dark .cta-gradient {
   color: #ffffff !important;
+}
+
+/* ================ 
+EFECTO DEGRADADO PARA ICONOS DE SERVICIOS
+================ */
+.service-item-inner:hover .icon {
+  background: linear-gradient(45deg, #000000 0%, var(--skin-color) 50%, var(--skin-color) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-item-inner:hover .icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+  background-size: 300% 300%;
+  animation: gradientShift 1.5s ease infinite;
+}
+
+.service-item-inner:hover .icon i {
+  color: #ffffff !important;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes gradientShift {
