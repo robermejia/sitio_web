@@ -925,7 +925,7 @@ MEDIA QUERIES PARA CERTIFICADOS
 BOTÓN CTA CON BORDE DEGRADADO
 ================ */
 .cta-gradient {
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(45deg, #000000 0%, #1e3a8a 50%, #3b82f6 100%);
   border: 2px solid transparent;
   background-clip: padding-box;
   position: relative;
