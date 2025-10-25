@@ -951,6 +951,13 @@ BOTÓN CTA CON BORDE DEGRADADO
   animation-duration: 0.8s;
 }
 
+/* ================ 
+MODO DARK PARA BOTÓN CTA
+================ */
+body.dark .cta-gradient {
+  color: #ffffff !important;
+}
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
