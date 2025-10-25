@@ -916,8 +916,50 @@ MEDIA QUERIES PARA CERTIFICADOS
 
 /* Móvil - 5% de ampliación */
 @media (max-width: 767px) {
-  .certificate-img:hover {
-    transform: scale(1.05);
+.certificate-img:hover {
+  transform: scale(1.05);
+  }
+}
+
+/* ================ 
+BOTÓN CTA CON BORDE DEGRADADO
+================ */
+.cta-gradient {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+  background-size: 300% 300%;
+  animation: gradientShift 2s ease infinite;
+}
+
+.cta-gradient:hover::before {
+  animation-duration: 0.8s;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 .about-section .timeline .timeline-item-inner:before {
