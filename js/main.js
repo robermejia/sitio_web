@@ -339,7 +339,7 @@ $response = document.querySelector(".contact-form-response");
 $form.addEventListener("submit", (e) => {
 e.preventDefault();
 $loader.classList.remove("none");
-fetch("https://formsubmit.co/ajax/robertomejiacollazos@gmail.com", {
+fetch("https://formsubmit.co/ajax/contacto@robermejia.com", {
   method: "POST",
   body: new FormData(e.target),
 })
