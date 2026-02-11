@@ -124,7 +124,8 @@ function bodyScrollingToggle() {
     event.target.classList.add("active","outer-shadow");
     const target = event.target.getAttribute("data-target");
     portfolioItems.forEach((item) =>{
-      if(target === item.getAttribute("data-category")  || target === 'all'){
+      const categories = item.getAttribute("data-category").split(" ");
+      if(categories.includes(target) || target === 'all'){
         item.classList.remove("hide");
         item.classList.add("show");
       }

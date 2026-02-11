@@ -40,26 +40,26 @@ ESTILOS GLOBALES
   ================ */
 body.dark {
   --bg-black-900: #ffffff;
-  --bg-black-800: #767676;
-  --bg-black-100: #656565;
-  --bg-black-50: #282c34;
-  --bg-opacity: #3b2f2d83;
+  --bg-black-800: #2d2d2d;
+  --bg-black-100: #1e1e1e;
+  --bg-black-50: #121212;
+  --bg-opacity: rgba(18, 18, 18, 0.83);
   --text-black-900: #ffffff;
-  --text-black-700: #ffffff;
-  --text-black-600: #bbbbbb;
-  --outer-shadow: 3px 3px 3px #16191d, -3px -3px 3px #393f4b;
-  --new-shadow: 3px 3px 3px 2px #16191d;
-  --outer-shadow-0: 0 0 0 #16191d, 0 0 0 #393f4b;
-  --inner-shadow: inset 3px 3px 3px #000000, inset -3px -3px 3px #434444;
-  --inner-shadow-0: inset 0 0 0 #16191d, inset 0 0 0 #393f4b;
-  --black-alpha-color: rgba(0, 0, 0, 0.7);
+  --text-black-700: #f0f0f0;
+  --text-black-600: #a0a0a0;
+  --outer-shadow: 3px 3px 3px #0a0a0a, -3px -3px 3px #1d1d1d;
+  --new-shadow: 3px 3px 3px 2px #0a0a0a;
+  --outer-shadow-0: 0 0 0 #0a0a0a, 0 0 0 #1d1d1d;
+  --inner-shadow: inset 3px 3px 3px #050505, inset -3px -3px 3px #1a1a1a;
+  --inner-shadow-0: inset 0 0 0 #0a0a0a, inset 0 0 0 #1d1d1d;
+  --black-alpha-color: rgba(0, 0, 0, 0.8);
   /* --MODAL:  */
   --bg-modal: var(--skin-color);
   --text-modal: #ffffff;
   /* --SCROLL:  */
-  --seleccion-text: #282c34;
-  --scroll-background: #616c80;
-  --scroll-barra: #3f4653;
+  --seleccion-text: #121212;
+  --scroll-background: #1e1e1e;
+  --scroll-barra: #333333;
 }
 
 /* ===================
