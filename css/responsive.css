@@ -190,6 +190,10 @@
         height: 150px;
         margin: 0 auto;
     }
+    .about-section .skills .skill-item .progress-bar span {
+        right: -30px;
+        margin: -40px 0 0 0;
+    }
 }
 @media(max-width: 574px){
     .logo {
