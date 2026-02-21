@@ -116,20 +116,11 @@ window.addEventListener('load', () => {
   const imageStorage = window.localStorage; // Obtenemos el almacenamiento local
 
   //Establecemos un tema por defecto si no hay uno guardado.
-  let currentTheme = imageStorage.getItem('theme') || 'light'; 
+  let currentTheme = imageStorage.getItem('theme') || 'light';
 
   function setLogo() {
     const isDarkMode = currentTheme === 'dark'; // Comprobamos si el tema actual es oscuro
-    const isMobile = window.innerWidth < 768; // Comprobamos si la pantalla es móvil (ajusta el punto de ruptura según sea necesario)
-
-    let src; // Variable para almacenar la ruta de la imagen
-    if (isMobile) {
-      // Si es móvil, usamos los logos móviles
-      src = isDarkMode ? 'img/logos/isologo_mobile_light.png' : 'img/logos/isologo_mobile_dark.png';
-    } else {
-      // Si no es móvil, usamos los logos normales
-      src = isDarkMode ? 'img/logos/logo_light.png' : 'img/logos/logo_dark.png';
-    }
+    const src = isDarkMode ? 'img/logos/logo-light.png' : 'img/logos/logo-dark.png';
     logoImg.src = src; // Cambiamos la ruta de la imagen del logo
   }
 
@@ -139,11 +130,11 @@ window.addEventListener('load', () => {
   //Escuchador de eventos para el cambio de tema
   const themeButton = document.getElementById('boton'); //Asumiendo que tienes un botón con el id 'boton'
   if (themeButton) {
-      themeButton.addEventListener('click', () => {
-          currentTheme = currentTheme === 'dark' ? 'light' : 'dark'; //Cambiamos el tema
-          imageStorage.setItem('theme', currentTheme); //Guardamos el tema en el almacenamiento local
-          setLogo(); //Actualizamos el logo
-      });
+    themeButton.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark'; //Cambiamos el tema
+      imageStorage.setItem('theme', currentTheme); //Guardamos el tema en el almacenamiento local
+      setLogo(); //Actualizamos el logo
+    });
   }
 
   // Escuchador de eventos para el cambio de tamaño de la ventana

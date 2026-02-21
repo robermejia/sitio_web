@@ -73,15 +73,18 @@
 }
 @media(max-width: 767px){
     .logo{
-        width: 50px;
+        width: 145px;
         height: auto;
+    }
+    .section-title {
+        padding-top: 80px;
     }
     .header .logo a{
-        width: 50px;
+        width: 145px;
         height: auto;
     }
-    #logo-imagen{
-        width: 50px;
+    #logo-imagen {
+        width: 145px;
         height: auto;
         margin: 0 auto;
     }
@@ -118,7 +121,11 @@
         max-width: 350px;
     }
     .effect-3{
-        margin-left: -90px;
+        height: 100px;
+        width: 100px;
+        border: 15px solid var(--skin-color);
+        top: -60px;
+        margin-left: -50px;
     }
     .effect-4 {
         left: 15%;
@@ -185,16 +192,19 @@
     }
 }
 @media(max-width: 574px){
-    .logo{
-        width: 50px;
+    .logo {
+        width: 145px;
         height: auto;
     }
-    .header .logo a{
-        width: 50px;
+    .section-title {
+        padding-top: 80px;
+    }
+    .header .logo a {
+        width: 145px;
         height: auto;
     }
-    #logo-imagen{
-        width: 50px;
+    #logo-imagen {
+        width: 145px;
         height: auto;
         margin: 0 auto;
     }

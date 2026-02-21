@@ -2,9 +2,7 @@
 FUENTES
 ================ */
 /* @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Scope+One&display=swap');  /* Scope One */
-@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700;800;900&family=Scope+One&display=swap'); /* Blinker*/
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* ================ 
 ESTILOS GLOBALES
@@ -79,8 +77,8 @@ body.hidden-scrolling {
 
 *:not(i) {
   /* font-family: "Raleway", sans-serif; */
-  font-family: 'Blinker', sans-serif;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
 * {
@@ -98,6 +96,12 @@ body.hidden-scrolling {
 a {
   text-decoration: none;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
 
 ul {
   list-style: none;
@@ -639,7 +643,7 @@ NAVEGACIÓN MENÚ
   font-style: italic;
   margin: 0;
   text-transform: capitalize;
-  font-family: 'Scope One', serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .home-section .home-text .btn-1 {
@@ -723,7 +727,7 @@ NAVEGACIÓN MENÚ
 }
 
 .about-section .about-info p {
-  font-family: 'Scope One', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 26px;
   margin-bottom: 15px;
@@ -763,7 +767,7 @@ NAVEGACIÓN MENÚ
 }
 
 .about-section .about-tabs .tab-item.active {
-  font-family: 'Blinker', sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .about-section .tab-content {
@@ -942,9 +946,9 @@ BOTÓN CTA CON BORDE DEGRADADO
   z-index: -1;
   margin: -2px;
   border-radius: inherit;
-  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
-  background-size: 300% 300%;
-  animation: gradientShift 2s ease infinite;
+  background: linear-gradient(45deg, var(--skin-color), color-mix(in srgb, var(--skin-color), #000 30%), var(--skin-color));
+  background-size: 200% 200%;
+  animation: gradientShift 3s linear infinite;
 }
 
 .cta-gradient:hover::before {
@@ -962,7 +966,7 @@ body.dark .cta-gradient {
 EFECTO DEGRADADO PARA ICONOS DE SERVICIOS
 ================ */
 .service-item-inner:hover .icon {
-  background: linear-gradient(45deg, #000000 0%, var(--skin-color) 50%, var(--skin-color) 100%);
+  background: linear-gradient(45deg, color-mix(in srgb, var(--skin-color), #000 40%), var(--skin-color), color-mix(in srgb, var(--skin-color), #000 40%));
   position: relative;
   overflow: hidden;
 }
@@ -977,9 +981,9 @@ EFECTO DEGRADADO PARA ICONOS DE SERVICIOS
   z-index: -1;
   margin: -2px;
   border-radius: inherit;
-  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
-  background-size: 300% 300%;
-  animation: gradientShift 1.5s ease infinite;
+  background: linear-gradient(45deg, var(--skin-color), color-mix(in srgb, var(--skin-color), #000 30%), var(--skin-color));
+  background-size: 200% 200%;
+  animation: gradientShift 3s linear infinite;
 }
 
 .service-item-inner:hover .icon i {
@@ -1068,7 +1072,7 @@ EFECTO DEGRADADO PARA ICONOS DE SERVICIOS
   color: var(--text-black-600);
   line-height: 26px;
   margin: 15px 0 0;
-  font-family: 'Scope One', serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* ================ 
@@ -1093,6 +1097,12 @@ SECCIÓN SERVICIOS
   border-radius: 5px;
   /* text-align: center; */
   width: 100%;
+  transition: all 0.5s ease;
+}
+
+.service-section .service-item-inner:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--new-shadow);
 }
 
 
@@ -1101,11 +1111,15 @@ SECCIÓN SERVICIOS
   width: 60px;
   text-align: center;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   display: block;
   margin: 0 auto 30px;
   position: relative;
   color: var(--text-black-600);
+}
+
+.service-section .service-item-inner:hover .icon {
+  transform: scale(1.1);
 }
 
 .service-section .service-item-inner .icon:after {
@@ -1147,7 +1161,7 @@ SECCIÓN SERVICIOS
 }
 
 .service-section .service-item-inner p {
-  font-family: 'Scope One', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: var(--text-black-600);
   margin: 0;
