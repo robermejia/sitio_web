@@ -39,6 +39,10 @@
     if (targetSection) {
       targetSection.classList.add("active");
       targetSection.classList.remove("hide");
+    } else {
+      // Fallback to inicio if section not found
+      navigateToSection("#inicio");
+      return;
     }
 
     /* deactivate existing active navigation menu 'link-item' */
@@ -67,8 +71,8 @@
 
   // Handle initial page load
   window.addEventListener("DOMContentLoaded", () => {
-    let path = window.location.pathname.replace(/^\/|\/$/g, "");
-    if (!path) path = "inicio";
+    let path = window.location.pathname.split("/").pop();
+    if (!path || path === "index.html" || path === "") path = "inicio";
     navigateToSection("#" + path);
   });
 
@@ -98,6 +102,51 @@
   })
 
 })();
+
+/* ================ CONTROL DE MÚSICA ================ */
+(() => {
+  const musicBtn = document.getElementById("music-toggle");
+  const audio = document.getElementById("bg-music");
+
+  if (musicBtn && audio) {
+    const playMusic = () => {
+      audio.play().then(() => {
+        musicBtn.querySelector("i").classList.remove("fa-play");
+        musicBtn.querySelector("i").classList.add("fa-pause");
+        // Remove the interaction listeners once music starts
+        document.removeEventListener("click", playMusic);
+        document.removeEventListener("touchstart", playMusic);
+      }).catch(err => {
+        console.log("Autoplay bloqueado. Esperando interacción del usuario...");
+      });
+    };
+
+    // Attempt to play on load
+    window.addEventListener("load", playMusic);
+
+    // Also play on first user interaction if blocked
+    document.addEventListener("click", playMusic);
+    document.addEventListener("touchstart", playMusic);
+
+    musicBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent document click from triggering playMusic again
+      if (audio.paused) {
+        audio.play().then(() => {
+          musicBtn.querySelector("i").classList.remove("fa-play");
+          musicBtn.querySelector("i").classList.add("fa-pause");
+        });
+      } else {
+        audio.pause();
+        musicBtn.querySelector("i").classList.remove("fa-pause");
+        musicBtn.querySelector("i").classList.add("fa-play");
+        // If the user manually stops it, we don't want interaction to restart it
+        document.removeEventListener("click", playMusic);
+        document.removeEventListener("touchstart", playMusic);
+      }
+    });
+  }
+})();
+
 /* ================ NAVEGACIÓN MENÚ FIN ================ */
 
 /* ================ SECCIÓN DE ACERCA ================ */
