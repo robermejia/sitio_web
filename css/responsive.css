@@ -194,6 +194,11 @@
         right: -45px;
         margin: -40px 0 0 0;
     }
+    .mobile-wrap {
+        display: block;
+        font-family: inherit;
+        font-weight: inherit;
+    }
 }
 @media(max-width: 574px){
     .logo {
