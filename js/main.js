@@ -46,20 +46,18 @@
     }
 
     /* deactivate existing active navigation menu 'link-item' */
-    const activeNavLink = navMenu.querySelector(".active");
-    if (activeNavLink) {
+    document.querySelectorAll(".link-item.active").forEach((activeNavLink) => {
       activeNavLink.classList.add("outer-shadow", "hover-in-shadow");
       activeNavLink.classList.remove("active", "inner-shadow");
-    }
+    });
 
     /* activate the new navigation menu 'link-item' */
-    let navItems = navMenu.querySelectorAll(".link-item");
-    navItems.forEach((item) => {
+    document.querySelectorAll(".link-item").forEach((item) => {
       if (hash === item.hash) {
         item.classList.add("active", "inner-shadow");
         item.classList.remove("outer-shadow", "hover-in-shadow");
       }
-    })
+    });
 
     if (navMenu.classList.contains("open")) {
       // hide navigation menu

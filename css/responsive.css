@@ -71,6 +71,31 @@
         text-align: center;
     }
 }
+
+/* ================ 
+REVISIÓN DE VISIBILIDAD DE MENÚ
+================ */
+@media(min-width: 1025px) {
+    .header .hamburger-btn {
+        display: none;
+    }
+    .header .nav-desktop {
+        display: block;
+    }
+    .effect-3 {
+        left: calc(35% - 70px);
+    }
+}
+
+@media(max-width: 1024px) {
+    .header .nav-desktop {
+        display: none;
+    }
+    .header .hamburger-btn {
+        display: flex;
+    }
+}
+
 @media(max-width: 767px){
     .logo{
         width: 145px;
@@ -125,7 +150,8 @@
         width: 100px;
         border: 15px solid var(--skin-color);
         top: -60px;
-        margin-left: -50px;
+        left: 50%;
+        margin-left: -20px;
     }
     .effect-4 {
         left: 15%;
@@ -191,13 +217,11 @@
         margin: 0 auto;
     }
     .about-section .skills .skill-item .progress-bar span {
-        right: -45px;
+        right: -60px;
         margin: -40px 0 0 0;
     }
     .mobile-wrap {
         display: block;
-        font-family: inherit;
-        font-weight: inherit;
     }
 }
 @media(max-width: 574px){

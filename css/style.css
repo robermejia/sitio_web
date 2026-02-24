@@ -322,6 +322,41 @@ LOGOTIPO
   height: auto;
 }
 /* ================ 
+NAVEGACIÓN DESKTOP
+================ */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.nav-desktop ul {
+  display: flex;
+}
+
+.nav-desktop ul li {
+  margin-left: 20px;
+}
+
+.nav-desktop ul li a {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-black-600);
+  padding: 10px 20px;
+  text-transform: capitalize;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-desktop ul li a.active {
+  color: var(--skin-color);
+}
+
+.nav-desktop ul li a:after {
+  border-radius: 25px;
+}
+/* ================ 
 NAVEGACIÓN MENÚ
 ================ */
 
@@ -503,7 +538,7 @@ NAVEGACIÓN MENÚ
   width: 180px;
   border: 25px solid var(--skin-color);
   border-radius: 5px;
-  left: 50%;
+  left: 35%;
   top: -120px;
 
   animation: leftBounce 3s ease-in-out infinite;
@@ -591,6 +626,12 @@ NAVEGACIÓN MENÚ
   margin: 0;
 }
 
+.mobile-wrap {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
 .section-title h2:before {
   content: attr(data-heading);
   display: block;
@@ -669,7 +710,7 @@ NAVEGACIÓN MENÚ
   ================ */
 
 .about-section {
-  padding: 80px 0px 0px 0px;
+  padding: 125px 0px 0px 0px;
   min-height: 100vh;
 }
 
@@ -1080,7 +1121,7 @@ SECCIÓN SERVICIOS
 ================ */
 
 .service-section {
-  padding: 80px 0px 0px 0px;
+  padding: 125px 0px 0px 0px;
   min-height: 100vh;
 }
 
@@ -1172,7 +1213,7 @@ SECCIÓN SERVICIOS
 SECCIÓN PORTAFOLIO
 ================ */
 .portfolio-section {
-  padding: 80px 0px 0px 0px;
+  padding: 125px 0px 0px 0px;
   min-height: 100vh;
 }
 
@@ -1646,7 +1687,7 @@ SECCIÓN DE TESTIMONIO
 SECCIÓN DE CONTACTO
 ================ */
 .contact-section {
-  padding: 80px 0px 0px 0px;
+  padding: 125px 0px 0px 0px;
   min-height: 100vh;
 }
 
