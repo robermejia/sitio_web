@@ -1372,24 +1372,6 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   animation: spin 2s linear infinite;
 }
 
-.portfolio-popup .pp-details {
-  max-width: 1350px;
-  width: calc(85% + 30px);
-  margin: auto;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.portfolio-popup .pp-details.active {
-  opacity: 1;
-}
-
-.portfolio-popup .pp-details-inner {
-  padding: 30px 0;
-}
-
 .portfolio-popup .pp-title {
   padding: 0 15px;
 }
@@ -1414,8 +1396,26 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
 
 .portfolio-popup .pp-title p span {
   font-weight: 400;
-  font-family: 'Scope One', serif;
   text-transform: capitalize;
+}
+
+.portfolio-popup .pp-details-inner {
+  max-width: 1350px;
+  width: calc(85% + 30px);
+  margin: auto;
+  padding: 30px 15px;
+}
+
+.portfolio-popup .pp-project-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.portfolio-popup .pp-project-details.active {
+  opacity: 1;
+  max-height: 2000px;
 }
 
 .portfolio-popup .pp-project-details h3 {
@@ -1432,12 +1432,12 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   padding: 0 15px;
 }
 
+
 .portfolio-popup .description p {
   font-size: 16px;
   color: var(--text-black-600);
   line-height: 26px;
   margin: 0;
-  font-family: 'Scope One', serif;
 }
 
 .portfolio-popup .info {
@@ -1452,7 +1452,6 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   font-weight: 600;
   color: var(--text-black-600);
   font-size: 16px;
-  font-family: 'Scope One', serif;
 }
 
 .portfolio-popup .info ul li span {
@@ -1467,11 +1466,14 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   margin-bottom: 0;
 }
 
-.portfolio-popup .separator {
-  height: 1px;
+.portfolio-popup .pp-main-integrated {
+  text-align: center;
+}
+
+.portfolio-popup .pp-img-container {
+  position: relative;
+  display: inline-block;
   width: 100%;
-  display: block;
-  background-color: var(--bg-black-100);
 }
 
 .portfolio-popup .pp-img {
@@ -1480,73 +1482,6 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   height: auto;
   padding: 10px;
   border-radius: 5px;
-}
-
-.portfolio-popup .pp-main {
-  min-height: 100vh;
-  max-width: 1350px;
-  width: 85%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.portfolio-popup .pp-main-inner {
-  padding: 70px 0 50px;
-  position: relative;
-}
-
-.portfolio-popup .pp-project-details-btn {
-  position: absolute;
-  left: 0;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--skin-color);
-  top: 15px;
-  cursor: pointer;
-  padding: 0 15px;
-  height: 40px;
-  line-height: 40px;
-  transition: all 0.3s ease;
-}
-
-.portfolio-popup .pp-project-details-btn i {
-  margin-left: 4px;
-}
-
-.portfolio-popup .pp-project-details-btn:after {
-  border-radius: 30px;
-}
-
-.portfolio-popup .pp-close {
-  position: absolute;
-  right: 0;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  top: 15px;
-  text-align: center;
-  line-height: 35px;
-  font-size: 35px;
-  color: var(--text-black-600);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.portfolio-popup .pp-close:after {
-  border-radius: 50%;
-}
-
-.portfolio-popup .pp-counter {
-  position: absolute;
-  right: 0;
-  height: 40px;
-  line-height: 40px;
-  bottom: 5px;
-  font-size: 16px;
-  color: var(--text-black-600);
 }
 
 .portfolio-popup .pp-prev,
@@ -1558,9 +1493,15 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   text-align: center;
   font-size: 20px;
   cursor: pointer;
-  z-index: 1010;
   color: var(--text-black-900);
   transition: all 0.3s ease;
+  background-color: var(--bg-black-50);
+  border-radius: 50%;
+  box-shadow: var(--outer-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1010;
   opacity: 0.5;
 }
 
@@ -1569,21 +1510,80 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   opacity: 1;
 }
 
-.portfolio-popup .pp-prev i,
-.portfolio-popup .pp-next i {
-  line-height: 40px;
-}
-
-.portfolio-popup .pp-prev i {
-  transform: rotate(180deg);
-}
-
 .portfolio-popup .pp-prev {
   left: 15px;
 }
 
 .portfolio-popup .pp-next {
   right: 15px;
+}
+
+.portfolio-popup .pp-prev i {
+  transform: rotate(180deg);
+}
+
+.portfolio-popup .pp-counter {
+  font-size: 16px;
+  color: var(--text-black-600);
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.portfolio-popup .pp-close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  font-size: 35px;
+  color: var(--text-black-600);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+
+.portfolio-popup .pp-project-details-btn {
+  display: inline-block;
+  width: max-content;
+  max-width: 100%;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--skin-color);
+  cursor: pointer;
+  padding: 0 25px;
+  height: 40px;
+  line-height: 40px;
+  transition: all 0.3s ease;
+  margin: 15px 0 25px;
+  background-color: var(--bg-black-50);
+  box-shadow: var(--outer-shadow);
+  text-align: center;
+}
+
+.portfolio-popup .pp-project-details-btn:hover {
+  box-shadow: var(--inner-shadow);
+}
+
+.portfolio-popup .pp-project-details-btn i {
+  margin-left: 4px;
+}
+
+.portfolio-popup .pp-project-details-btn:after {
+  border-radius: 30px;
+}
+
+@media(min-width: 1025px) {
+  .portfolio-popup .pp-main-integrated {
+    text-align: left;
+  }
+  .portfolio-popup .pp-project-details-btn {
+    margin: 15px 0 25px;
+  }
 }
 
 /* ================ 

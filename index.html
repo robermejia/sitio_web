@@ -1637,36 +1637,37 @@
   <!--  PÁGINA DE PORTAFOLIO - FIN -->
 
   <!--  VENTANA EMERGENTE DE PORTAFOLIO   -->
-  <div class="pp portfolio-popup">
-    <div class="pp-details">
-      <div class="pp-details-inner">
-        <div class="pp-title">
-          <h2></h2>
-          <p>Categoría - <span class="pp-project-category"></span></p>
-        </div>
-        <div class="pp-project-details">
-        </div>
+  <div class="portfolio-popup pp">
+    <div class="pp-details-inner">
+      <div class="pp-close-btn outer-shadow hover-in-shadow">&times;</div>
+      
+      <div class="pp-title">
+        <h2></h2>
+        <p>Categoría - <span class="pp-project-category"></span></p>
       </div>
-    </div>
 
-    <div class="separator"></div>
+      <!-- Collapsible Details -->
+      <div class="pp-project-details active" style="max-height: 1000px; opacity: 1; overflow: hidden; transition: all 0.5s ease">
+      </div>
 
-    <div class="pp-main">
-      <div class="pp-main-inner">
+      <!-- Navigation Controls and Image Integrated -->
+      <div class="pp-main-integrated">
         <div class="pp-project-details-btn outer-shadow hover-in-shadow">
-          Detalles del proyecto <i class="fas fa-plus"></i>
+          Ver detalles del proyecto <i class="fas fa-plus"></i>
         </div>
-        <div class="pp-close outer-shadow hover-in-shadow">&times;</div>
-        <img src="img/portfolio/large/project-1/1.png" alt="img" class="pp-img outer-shadow" />
-        <div class="pp-counter"></div>
+        
+        <div class="pp-img-container">
+          <div class="pp-loader">
+            <div></div>
+          </div>
+          <img src="" alt="screenshot" class="pp-img outer-shadow" />
+          <div class="pp-counter"></div>
+        </div>
       </div>
-      <div class="pp-loader">
-        <div></div>
-      </div>
-      <!--  pp navigation -->
-      <div class="pp-prev"><i class="fas fa-play"></i></div>
-      <div class="pp-next"><i class="fas fa-play"></i></div>
+
     </div>
+    <div class="pp-prev"><i class="fas fa-play"></i></div>
+    <div class="pp-next"><i class="fas fa-play"></i></div>
   </div>
   <!--  VENTANA EMERGENTE DE PORTAFOLIO - FIN  -->
 

@@ -186,8 +186,8 @@ function bodyScrollingToggle() {
     popup = document.querySelector(".portfolio-popup"),
     prevBtn = popup.querySelector(".pp-prev"),
     nextBtn = popup.querySelector(".pp-next"),
-    closeBtn = popup.querySelector(".pp-close"),
-    projectDetailsContainer = popup.querySelector(".pp-details"),
+    closeBtn = popup.querySelector(".pp-close-btn"),
+    projectDetailsContainer = popup.querySelector(".pp-project-details"),
     projectDetailsBtn = popup.querySelector(".pp-project-details-btn");
   let itemIndex, slideIndex, screenshots;
 
@@ -294,15 +294,21 @@ function bodyScrollingToggle() {
     // get the project details
     const details = portfolioItems[itemIndex].querySelector(".portfolio-item-details").innerHTML;
     // set the project details
-    popup.querySelector(".pp-project-details").innerHTML = details;
+    projectDetailsContainer.innerHTML = details;
     // get the project title
     const title = portfolioItems[itemIndex].querySelector(".portfolio-item-title").innerHTML;
     // set the project title
     popup.querySelector(".pp-title h2").innerHTML = title;
     // get the project category
     const category = portfolioItems[itemIndex].getAttribute("data-category");
-    // get the project category
+    // set the project category
     popup.querySelector(".pp-project-category").innerHTML = category.split("-").join(" ");
+
+    // Ensure details are open by default
+    projectDetailsContainer.classList.add("active");
+    projectDetailsContainer.style.maxHeight = ''; // Remove inline style to allow CSS to take over
+    projectDetailsContainer.style.opacity = '';
+    projectDetailsBtn.innerHTML = 'Ver menos detalles <i class="fas fa-minus"></i>';
   }
 
 
@@ -315,16 +321,21 @@ function bodyScrollingToggle() {
       projectDetailsBtn.querySelector("i").classList.remove("fa-minus");
       projectDetailsBtn.querySelector("i").classList.add("fa-plus");
       projectDetailsContainer.classList.remove("active");
-      projectDetailsContainer.style.maxHeight = 0 + "px"
+      projectDetailsContainer.style.maxHeight = 0 + "px";
+      projectDetailsContainer.style.opacity = 0;
+      projectDetailsBtn.innerHTML = 'Ver detalles del proyecto <i class="fas fa-plus"></i>';
     }
     else {
       projectDetailsBtn.querySelector("i").classList.remove("fa-plus");
       projectDetailsBtn.querySelector("i").classList.add("fa-minus");
       projectDetailsContainer.classList.add("active");
       projectDetailsContainer.style.maxHeight = projectDetailsContainer.scrollHeight + "px";
+      projectDetailsContainer.style.opacity = 1;
+      projectDetailsBtn.innerHTML = 'Ver menos detalles <i class="fas fa-minus"></i>';
       popup.scrollTo(0, projectDetailsContainer.offsetTop);
     }
   }
+
 
 })();
 
