@@ -11,18 +11,18 @@ ESTILOS GLOBALES
 :root {
   --bg-black-900: #000000;
   --bg-black-800: #4e4e4e;
-  --bg-black-100: #dddddd;
-  --bg-black-50: #eeeeee;
-  --bg-opacity: rgba(255, 255, 255, 0.5);
+  --bg-black-100: #cddced;
+  --bg-black-50: #d0e1f0;
+  --bg-opacity: rgba(208, 225, 240, 0.5);
   --text-black-900: #4e4e4e;
   --text-black-700: #555555;
   --text-black-600: #4e4e4e;
   --text-black-300: #bbbbbb;
-  --outer-shadow: 3px 3px 3px #949494, -3px -3px 3px #f8f8f8;
-  --new-shadow: 3px 3px 3px 2px #949494;
-  --outer-shadow-0: 0 0 0 #949494, 0 0 0 #f8f8f8;
-  --inner-shadow: inset 3px 3px 3px #949494, inset -3px -3px 3px #f8f8f8;
-  --inner-shadow-0: inset 0 0 0 #949494, inset 0 0 0 #f8f8f8;
+  --outer-shadow: 3px 3px 3px #b1c6d9, -3px -3px 3px #e6f0f9;
+  --new-shadow: 3px 3px 3px 2px #b1c6d9;
+  --outer-shadow-0: 0 0 0 #b1c6d9, 0 0 0 #e6f0f9;
+  --inner-shadow: inset 3px 3px 3px #b1c6d9, inset -3px -3px 3px #e6f0f9;
+  --inner-shadow-0: inset 0 0 0 #b1c6d9, inset 0 0 0 #e6f0f9;
   --black-alpha-color: rgba(0, 0, 0, 0.7);
   /* --MODAL:  */
   --bg-modal: var(--skin-color);
