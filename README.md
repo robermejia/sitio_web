@@ -6,7 +6,7 @@ Portafolio personal con diseño premium, construido con tecnologías web estánd
 Puedes ver el sitio en vivo aquí: [https://robermejia.com/](https://robermejia.com/)
 
 📸 **Vista Previa**  
-![página web](https://i.ibb.co/fYXPGCZk/preview-sitio-web-1.png)
+![página web](https://i.ibb.co/21Xnf0rD/screencapture-robermejia-inicio-2026-03-03-22-45-03.png)
 
 🛠️ **Tecnologías**  
 - HTML5  
