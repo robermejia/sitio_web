@@ -69,16 +69,22 @@
 
   // Handle initial page load
   window.addEventListener("DOMContentLoaded", () => {
-    let path = window.location.pathname.replace(/^\/|\/$/g, "");
-    if (!path || path === "index.html") path = "inicio";
-    navigateToSection("#" + path);
+    const hash = window.location.hash;
+    if (hash && hash !== "#") {
+      navigateToSection(hash);
+    } else {
+      navigateToSection("#inicio");
+    }
   });
 
-  // Handle browser back/forward buttons
-  window.addEventListener("popstate", () => {
-    let path = window.location.pathname.replace(/^\/|\/$/g, "");
-    if (!path) path = "inicio";
-    navigateToSection("#" + path);
+  // Handle browser back/forward buttons and hash changes
+  window.addEventListener("hashchange", () => {
+    const hash = window.location.hash;
+    if (hash && hash !== "#") {
+      navigateToSection(hash);
+    } else {
+      navigateToSection("#inicio");
+    }
   });
 
   // attach an event handler to document
@@ -86,14 +92,9 @@
     if (event.target.classList.contains('link-item')) {
       /* make sure event.target.hash has a value before overridding defaul behavior */
       if (event.target.hash !== "") {
-        // prevent defaul anchor click behavior
-        event.preventDefault();
+        // We let the default behavior happen (updating the hash)
+        // and handle the navigation via navigateToSection inDOMContentLoaded/hashchange
         const hash = event.target.hash;
-        const path = hash.substring(1);
-
-        // update URL without #
-        history.pushState(null, null, "/" + path);
-
         navigateToSection(hash);
       }
     }
