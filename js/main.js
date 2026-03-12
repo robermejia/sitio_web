@@ -69,8 +69,8 @@
 
   // Handle initial page load
   window.addEventListener("DOMContentLoaded", () => {
-    let path = window.location.pathname.split("/").pop();
-    if (!path || path === "index.html" || path === "") path = "inicio";
+    let path = window.location.pathname.replace(/^\/|\/$/g, "");
+    if (!path || path === "index.html") path = "inicio";
     navigateToSection("#" + path);
   });
 
