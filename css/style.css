@@ -1472,8 +1472,9 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
 
 .portfolio-popup .pp-img-container {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 100%;
+  text-align: center;
 }
 
 .portfolio-popup .pp-img {
@@ -1482,6 +1483,8 @@ VENTANA EMERGENTE DE PORTAFOLIO (popup)
   height: auto;
   padding: 10px;
   border-radius: 5px;
+  display: block;
+  margin: 0 auto;
 }
 
 .portfolio-popup .pp-prev,
