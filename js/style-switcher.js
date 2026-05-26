@@ -47,6 +47,7 @@ dayNight.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
   }
   updateIcon();
+  updateLogo();
 });
 
 function themeMode() {
@@ -59,6 +60,7 @@ function themeMode() {
     }
   }
   updateIcon();
+  updateLogo();
 }
 themeMode();
 
@@ -72,72 +74,13 @@ function updateIcon() {
   }
 }
 
-/* ================  Logo light and dark ================ */
-// let imagenLogo = "dark";
+/* ================  Logo light y dark ================ */
 
-// function miFuncion() {
-//   var logotipo = document.getElementById("logo-imagen");
-//   if (imagenLogo == "dark") {
-//     logotipo.src = "https://xn--robertio-j3a.com/img/logos/logo-light.png";
-//     imagenLogo = "light";
-//   } else {
-//     logotipo.src = "https://xn--robertio-j3a.com/img/logos/logo-dark.png";
-//     imagenLogo = "dark";
-//   }
-// }
-
-//Esperamos a que la pagina este completamente cargada
-/*
-window.addEventListener('load',() => {
-  var logotipo = document.getElementById('logo-imagen');
-  var image_storage = window.localStorage; //Obtenemos el sessionStorage
-  //Comprobamos si ya existe algun tema guardado en el sessionStorage y si existe usamos ese tema
-  if (image_storage.getItem('theme')){
-      logotipo.src = image_storage.getItem('theme_url');
-  }
-  //Le he puesto un id al boton para añadirle un listener (me parece mejor asi para no tener codigo javascript dentro del html)
-  var boton = document.getElementById('boton');
-  boton.addEventListener('click', () => {
-      //Validamos el tema, si esta en dark al hacer click se hara light y viceversa
-      if (image_storage.getItem('theme') == 'light'){
-          logotipo.src = 'img/logos/logo_dark.png';
-          image_storage.setItem('theme_url','img/logos/logo_dark.png');
-          image_storage.setItem('theme','light');
-      }else{
-          logotipo.src = 'img/logos/logo_light.png';
-          image_storage.setItem('theme_url','img/logos/logo_light.png');
-          image_storage.setItem('theme','dark');
-      }
-  });
-});
-*/
-window.addEventListener('load', () => {
-  const logoImg = document.getElementById('logo-imagen'); // Obtenemos la imagen del logo
-  const imageStorage = window.localStorage; // Obtenemos el almacenamiento local
-
-  //Establecemos un tema por defecto si no hay uno guardado.
-  let currentTheme = imageStorage.getItem('theme') || 'light';
-
-  function setLogo() {
-    const isDarkMode = currentTheme === 'dark'; // Comprobamos si el tema actual es oscuro
-    const src = isDarkMode ? 'img/logos/logo-light.png' : 'img/logos/logo-dark.png';
-    logoImg.src = src; // Cambiamos la ruta de la imagen del logo
-  }
-
-  // Se establece el logo inicial al cargar la página
-  setLogo();
-
-  //Escuchador de eventos para el cambio de tema
-  const themeButton = document.getElementById('boton'); //Asumiendo que tienes un botón con el id 'boton'
-  if (themeButton) {
-    themeButton.addEventListener('click', () => {
-      currentTheme = currentTheme === 'dark' ? 'light' : 'dark'; //Cambiamos el tema
-      imageStorage.setItem('theme', currentTheme); //Guardamos el tema en el almacenamiento local
-      setLogo(); //Actualizamos el logo
-    });
-  }
-
-  // Escuchador de eventos para el cambio de tamaño de la ventana
-  window.addEventListener('resize', setLogo); //Actualizamos el logo si cambia el tamaño de la ventana
-
-});
+function updateLogo() {
+  const logoImg = document.getElementById('logo-imagen');
+  if (!logoImg) return;
+  const isDark = document.body.classList.contains('dark');
+  // Tema dark  → logo blanco (logo-light.png)
+  // Tema light → logo color  (logo-dark.png)
+  logoImg.src = isDark ? 'img/logos/logo-light.png' : 'img/logos/logo-dark.png';
+}
